@@ -125,15 +125,11 @@ public class RatInMaze extends Canvas implements Runnable, MouseListener {
 	public void setMazeDirections() {
 		for (int i = 0; i < nodeList.length; i++) {
 			for (int j = 0; j < nodeList[i].length; j++) {
-				Node up = null, down = null, left = null, right = null;
-				int u = j - 1;
+				Node  down = null,  right = null;
 				int d = j + 1;
-				int l = i - 1;
 				int r = i + 1;
 
-				if (u >= 0) up = nodeList[i][u];
 				if (d < GRID_SIZE) down = nodeList[i][d];
-				if (l >= 0) left = nodeList[l][j];
 				if (r < GRID_SIZE) right = nodeList[r][j];
 				nodeList[i][j].setDirections( right,  down);
 			}
